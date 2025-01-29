@@ -1,0 +1,9 @@
+PUT http://localhost:3000/users/90e2ef7b-d3de-41bc-ab0c-ef51a0ddd03a
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "João Silva",
+    "email": "joaosilva@email.com",
+    "password": "abcd1234"
+}
