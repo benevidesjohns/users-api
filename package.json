@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "create-table": "node src/database/create-table.js",
     "watch": "node --watch --no-warnings server.js"
   },
   "keywords": [],
