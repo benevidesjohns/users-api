@@ -1,0 +1,41 @@
+services:
+  backend:
+    container_name: node-api
+    image: node:jod-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    depends_on:
+      - pgsql
+    networks:
+      - app-network
+    tty: true
+    stdin_open: true
+
+  pgsql:
+    container_name: pgsql
+    image: postgres:17-alpine3.21
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+
+
+networks:
+  app-network:
+    driver: bridge
