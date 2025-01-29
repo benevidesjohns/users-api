@@ -1,4 +1,4 @@
-PUT http://localhost:3000/users/90e2ef7b-d3de-41bc-ab0c-ef51a0ddd03a
+PUT http://localhost:3000/users/b0465443-1584-4349-8443-d111eeaef691
 Content-Type: application/json
 Accept: application/json
 

@@ -1,12 +1,11 @@
 import 'dotenv/config'
 import postgres from 'postgres'
 
-const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env
+const { DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env
 
 export const sql = postgres({
-    host: PGHOST,
-    database: PGDATABASE,
-    username: PGUSER,
-    password: PGPASSWORD,
-    ssl: 'require',
+    host: DB_HOST,
+    database: DB_NAME,
+    username: DB_USER,
+    password: DB_PASSWORD,
 })
